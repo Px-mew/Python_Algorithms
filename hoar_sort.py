@@ -1,7 +1,7 @@
 import turtle
 import random
 """
-    Алгоритм сортировки слиянием с визуализацией
+    Алгоритм сортировки Тони Хоара с визуализацией
 """
 
 def clear_column(value, x):
@@ -60,17 +60,17 @@ def hoar_sort(A, xlr):
     xr = xlr+len(L)+len(M)
     clear_column(100, (-2 - 20) * 20)
     column(M[0], (-2 - 20) * 20, 'Aquamarine3')
-    for x in L + M:
-        if x in L:
+    for x in L + M + R:
+        if x in L + R:
             color = ('khaki1')
         if x in M:
             color = ('Aquamarine3')
         clear_column(100, (xlr - 20) * 20)
         column(x, (xlr - 20) * 20, color)
         xlr += 1
-    if len(R) == 1:
-        clear_column(100, (xlr - 20) * 20)
-        column(R[0], (xlr - 20) * 20, 'khaki1')
+    #if len(R) == 1:
+    #    clear_column(100, (xlr - 20) * 20)
+    #    column(R[0], (xlr - 20) * 20, 'khaki1')
     hoar_sort(L, xl)
     hoar_sort(R, xr)
     k = 0
